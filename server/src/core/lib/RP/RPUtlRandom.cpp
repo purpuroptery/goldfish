@@ -1,6 +1,8 @@
 #include "RPUtlRandom.h"
 #include "lib/rvl/OSTime.h"
 
+#include <iostream>
+
 /// <summary>
 /// Initialize seed using OSCalendarTime object
 /// </summary>
@@ -65,6 +67,8 @@ u32 RPUtlRandom::getU32()
 f32 RPUtlRandom::getF32(bool ver_1_0)
 {
     u32 seed = getU32();
+
+    // std::cout << ver_1_0 << std::endl;
 
     // in 1.0, the bottom 16 bits of the seed are used
     // in 1.1/1.2, the top 16 bits are used

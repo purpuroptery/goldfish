@@ -48,7 +48,7 @@ public:
     std::vector<unsigned int> hashesWithDepth(int depth) const;
     Score_t scoreAgainst(const RPGolWindSet &) const;
     void toString(char *buf, const char *setStartDelim = "{", const char *setEndDelim = "}",
-                  const char *termStartDelim = "", const char *termEndDelim = ", ", bool bCloseEndDelim = false) const;
+                  const char *termStartDelim = "", const char *termEndDelim = ",", bool bCloseEndDelim = false) const;
 
 private:
     static constexpr Score_t scoreBase = 8;

@@ -135,8 +135,14 @@ public:
         // if there's no last known seed, read the seeds from the precompute file
         else
         {
-            std::vector<u32> hashes = inputToHashes(input);
-            seeds = getSeedsFromFile(filePath, hashes);
+            // std::vector<u32> hashes = inputToHashes(input);
+            // seeds = getSeedsFromFile(filePath, hashes);
+
+            seeds.resize(65536);
+            for (u32 i = 0; i < 65536; ++i)
+            {
+                seeds[i] = i;
+            }
         }
 
         std::vector<TOutput> results = getResults(seeds, input);

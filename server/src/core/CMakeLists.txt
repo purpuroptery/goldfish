@@ -28,7 +28,7 @@ add_executable(finder
 
 # Include debug symbols
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O3")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 
 # Include directories (if any)
 include_directories(${PROJECT_SOURCE_DIR})

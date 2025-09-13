@@ -114,27 +114,27 @@ void RPGolWindSet::toString(char *out, const char *setStartDelim, const char *se
     // String buffer
     char buf[1024] = {0};
 
-    // Insert set start delimiter
-    std::strcat(buf, setStartDelim);
+    // // Insert set start delimiter
+    // std::strcat(buf, setStartDelim);
 
     // Convert each speed + direction to string (keep wildcard if that was part of the input)
-    for (u32 i = 0; i < this->mSize; i++)
+    for (u32 i = 0; i < 3; i++)
     {
-        // Term start delim
-        std::strcat(buf, termStartDelim);
+        // // Term start delim
+        // std::strcat(buf, termStartDelim);
 
         // Wind speed/direction
         char windbuf[128];
-        std::snprintf(windbuf, sizeof(windbuf), "%2dm/s %s", mWinds[i].mSpeed, RPGolDefine::DirToString(mWinds[i].mDirection));
+        std::snprintf(windbuf, sizeof(windbuf), "%d%s", mWinds[i + 6].mSpeed, RPGolDefine::DirToString(mWinds[i + 6].mDirection));
         std::strcat(buf, windbuf);
 
         // Term end delim (except last item)
-        if (i < this->mSize - 1 || bCloseEndDelim)
+        if (i < 3 - 1 || bCloseEndDelim)
             std::strcat(buf, termEndDelim);
     }
 
-    // Insert set end delimiter
-    std::strcat(buf, setEndDelim);
+    // // Insert set end delimiter
+    // std::strcat(buf, setEndDelim);
 
     // Copy out full string
     std::strcpy(out, buf);

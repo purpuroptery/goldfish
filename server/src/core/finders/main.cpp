@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <iomanip>
 
 int main(int argc, char *argv[])
 {
@@ -40,9 +41,9 @@ int main(int argc, char *argv[])
 
         for (const auto &result : results)
         {
-            std::cout << "Seed: 0x" << std::hex << result.seed << std::endl;
+            std::cout << std::hex << std::setw(4) << std::setfill('0') << result.seed;
             result.windSet.toString(buffer);
-            std::cout << "Wind: " << buffer << "\n\n";
+            std::cout << "," << buffer << "\n";
         }
 
         break;
@@ -64,9 +65,9 @@ int main(int argc, char *argv[])
 
         for (const auto &result : results)
         {
-            std::cout << "Seed: 0x" << std::hex << result.seed << std::endl;
+            std::cout << std::hex << std::setw(8) << std::setfill('0') << result.seed << std::endl;
             result.windSet.toString(buffer);
-            std::cout << "Wind: " << buffer << "\n\n";
+            std::cout << "," << buffer << "\n";
         }
         break;
     }

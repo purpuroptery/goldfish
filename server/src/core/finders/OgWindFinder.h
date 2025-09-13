@@ -31,13 +31,13 @@ public:
     {
         RPUtlRandom::initialize(seed);
         auto windSet = RPGolWindSet();
-        RPGolConfig::getInstance()->MakeWindSet(diff_Ninehole, windSet, ver_1_0);
+        RPGolConfig::getInstance()->MakeWindSet(diff_Expert, windSet, ver_1_0);
         return {seed, windSet};
     }
 
     virtual bool doesPotentialOutputMatchInput(const OgWindFinderOutput &output, const RPGolWindSet &input) override
     {
-        return output.windSet == input;
+        return true;
     }
 
     virtual u32 nextSeed(u32 currentSeed) override
