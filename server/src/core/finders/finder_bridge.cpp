@@ -73,10 +73,10 @@ OgWindFinderOutputWithErrorFFI find_og_wind(const OgWindFinderInputFFI &input, c
             WsrWindFinder finder(filePath);
             RPGolWindSet windSet = inputFFIToWindSet(input, 21);
 
-            // print windset
-            char buffer[1024];
-            windSet.toString(buffer);
-            std::cout << buffer << std::endl;
+            // // print windset
+            // char buffer[1024];
+            // windSet.toString(buffer);
+            // std::cout << buffer << std::endl;
 
             outputs = finder.find(windSet, settings.last_known_seed, settings.num_to_check);
         }
@@ -98,7 +98,7 @@ OgWindFinderOutputWithErrorFFI find_og_wind(const OgWindFinderInputFFI &input, c
     }
     catch (const std::exception &e)
     {
-        std::cout << rust::String(e.what()) << std::endl;
+        // std::cout << rust::String(e.what()) << std::endl;
         finalOutput.error = rust::String("An error occured");
     }
     return finalOutput;
@@ -148,7 +148,7 @@ ScoredOgBlinkFinderOutputWithErrorFFI find_og_blink(const OgBlinkFinderInputFFI 
     }
     catch (const std::exception &e)
     {
-        std::cout << rust::String(e.what()) << std::endl;
+        // std::cout << rust::String(e.what()) << std::endl;
         finalOutput.error = rust::String("An error occured");
         // finalOutput.error = rust::String(e.what());
     }
