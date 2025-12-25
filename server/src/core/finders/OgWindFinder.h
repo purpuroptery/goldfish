@@ -17,8 +17,9 @@ struct OgWindFinderOutput
 class OgWindFinder : public ExactMatchFinder<RPGolWindSet, OgWindFinderOutput>
 {
 public:
-    OgWindFinder(const std::string &filePath, bool ver_1_0)
-        : ExactMatchFinder<RPGolWindSet, OgWindFinderOutput>(ver_1_0 ? 1 << 7 : 1 << 21, filePath) {}
+    OgWindFinder(const std::string &filePath, bool ver_1_0_param)
+        : ExactMatchFinder<RPGolWindSet, OgWindFinderOutput>(ver_1_0_param ? 1 << 7 : 1 << 21, filePath),
+        ver_1_0(ver_1_0_param) {}
 
     virtual ~OgWindFinder() = default;
 
