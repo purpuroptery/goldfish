@@ -6,7 +6,7 @@ A REST API for predicting wind in golf for games in the Wii Sports series.
 
 https://goldfish-demo.vercel.app
 
-https://github.com/purpuropterus/goldfish-demo
+https://github.com/purpuroptery/goldfish-demo
 
 ## Precompute files
 
